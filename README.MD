@@ -18,20 +18,26 @@ Collection Manager permet aux utilisateurs de s'inscrire et de gérer leur colle
 ## Stack Technique
 
 ### Frontend
-- React 18
+- React 19
 - TypeScript
+- Vite (build tool)
 - React Router pour la navigation
-- Axios pour les appels API
 
 ### Backend
-- NestJS
+- NestJS 11
 - TypeScript
+- Mongoose pour MongoDB
 - JWT pour l'authentification
-- Validation des données avec class-validator
+- class-validator pour la validation
 
 ### Base de données
 - MongoDB
-- Mongoose pour l'ODM
+- Mongoose ODM
+
+### Outils de développement
+- pnpm (gestionnaire de paquets)
+- Biome (linter et formatter)
+- Concurrently (exécution parallèle)
 
 ## Prérequis
 
@@ -41,16 +47,22 @@ Collection Manager permet aux utilisateurs de s'inscrire et de gérer leur colle
 
 ## Installation
 
-#### Initialisation du projet
-
-### Configuration Backend
-
 ```bash
-cd backend
+# Installer les dépendances
 pnpm install
+
+# Installer les dépendances du backend
+cd backend && pnpm install
+
+# Installer les dépendances du frontend
+cd frontend && pnpm install
 ```
 
-Créer un fichier `.env` :
+## Configuration
+
+### Backend
+
+Créer un fichier `backend/.env` :
 
 ```env
 PORT=3000
@@ -58,29 +70,53 @@ MONGODB_URI=mongodb://localhost:27017/collection-manager
 JWT_SECRET=your_secret_key
 ```
 
-Démarrer le serveur :
+### Frontend
 
-```bash
-pnpm run start:dev
-```
-
-### Configuration Frontend
-
-```bash
-cd frontend
-pnpm install
-```
-
-Créer un fichier `.env` :
+Créer un fichier `frontend/.env` :
 
 ```env
 VITE_API_URL=http://localhost:3000
 ```
 
-Démarrer l'application :
+## Commandes
+
+### Développement
 
 ```bash
+# Lancer frontend et backend simultanément
 pnpm run dev
+
+# Lancer uniquement le backend
+cd backend && pnpm run start:dev
+
+# Lancer uniquement le frontend
+cd frontend && pnpm run dev
+```
+
+### Linting et Formatage
+
+```bash
+# Vérifier le code (lint + format)
+pnpm run lint
+
+# Corriger automatiquement les problèmes
+pnpm run lint:fix
+
+# Formater le code
+pnpm run format
+
+# Vérifier et corriger tout
+pnpm run check
+```
+
+### Build
+
+```bash
+# Build backend
+cd backend && pnpm run build
+
+# Build frontend
+cd frontend && pnpm run build
 ```
 
 ## Structure du Projet
