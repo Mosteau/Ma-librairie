@@ -1,14 +1,14 @@
 /**
  * DTO (Data Transfer Object) - CREATE USER
- * 
+ *
  * Un DTO définit la structure des données qui transitent entre le client et le serveur.
  * Il sert à:
  * - Valider les données entrantes (avec class-validator)
  * - Typer les données (TypeScript)
  * - Documenter l'API
  * - Séparer la structure de l'API de la structure en base (principe SOLID)
- * 
- * Principe SOLID appliqué: 
+ *
+ * Principe SOLID appliqué:
  * - Single Responsibility: Validation des données d'entrée uniquement
  * - Interface Segregation: Un DTO spécifique par action (Create, Update, etc.)
  */
