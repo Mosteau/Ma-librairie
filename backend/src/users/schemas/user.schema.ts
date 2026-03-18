@@ -1,12 +1,12 @@
 /**
  * SCHEMA MONGOOSE - Définition de la structure des données User en base MongoDB
- * 
+ *
  * Un schema Mongoose définit:
  * - La structure des documents (équivalent d'une table SQL)
  * - Les types de données
  * - Les validations
  * - Les index
- * 
+ *
  * Principe SOLID appliqué: Single Responsibility - Ce fichier ne gère QUE la structure des données
  */
 
@@ -21,7 +21,7 @@ import { Document } from "mongoose";
 export class User extends Document {
 	/**
 	 * @Prop() - Décorateur qui définit une propriété du schema
-	 * 
+	 *
 	 * Options disponibles:
 	 * - required: true/false - Champ obligatoire
 	 * - unique: true/false - Valeur unique dans toute la collection
@@ -32,7 +32,7 @@ export class User extends Document {
 	@Prop({ required: true, unique: true })
 	email: string;
 
-	@Prop({ required: true })
+	@Prop({ required: true, select: false })
 	password: string;
 
 	@Prop({ required: true })

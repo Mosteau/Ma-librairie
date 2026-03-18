@@ -1,20 +1,20 @@
 /**
  * TESTS UNITAIRES - UsersController
- * 
+ *
  * Ces tests vérifient que le controller:
  * - Appelle les bonnes méthodes du service
  * - Passe les bons paramètres
  * - Retourne les bonnes réponses
- * 
+ *
  * On mocke UsersService pour isoler le controller
  */
 
 import type { TestingModule } from "@nestjs/testing";
 import { Test } from "@nestjs/testing";
-import { UsersController } from "./users.controller";
-import { UsersService } from "./users.service";
 import type { CreateUserDto } from "./dto/create-user.dto";
 import type { UpdateUserDto } from "./dto/update-user.dto";
+import { UsersController } from "./users.controller";
+import { UsersService } from "./users.service";
 
 /**
  * describe() - Groupe de tests pour UsersController

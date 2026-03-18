@@ -1,23 +1,23 @@
 /**
  * TESTS UNITAIRES - UsersService
- * 
+ *
  * Les tests unitaires vérifient le comportement d'une unité de code isolée.
  * Ici, on teste UsersService en mockant (simulant) ses dépendances.
- * 
+ *
  * Concepts clés:
  * - Mock: Simulation d'une dépendance (ici, le Model Mongoose)
  * - Spy: Surveillance des appels de méthodes
  * - Assertion: Vérification des résultats attendus
  */
 
+import { getModelToken } from "@nestjs/mongoose";
 import type { TestingModule } from "@nestjs/testing";
 import { Test } from "@nestjs/testing";
-import { getModelToken } from "@nestjs/mongoose";
 import type { Model } from "mongoose";
-import { UsersService } from "./users.service";
-import { User } from "./schemas/user.schema";
 import type { CreateUserDto } from "./dto/create-user.dto";
 import type { UpdateUserDto } from "./dto/update-user.dto";
+import { User } from "./schemas/user.schema";
+import { UsersService } from "./users.service";
 
 /**
  * describe() - Groupe de tests pour UsersService
@@ -98,7 +98,7 @@ describe("UsersService", () => {
 					/**
 					 * getModelToken(User.name) - Récupère le token d'injection du modèle
 					 * useValue: mockUserModel - Remplace le vrai modèle par notre mock
-					 * 
+					 *
 					 * IMPORTANT: On transforme mockUserModel en fonction constructeur
 					 * pour que "new this.userModel()" fonctionne dans le service
 					 */
@@ -152,7 +152,7 @@ describe("UsersService", () => {
 
 			/**
 			 * Mock du constructeur et de la méthode save()
-			 * 
+			 *
 			 * Explication:
 			 * - On espionne (spy) le modèle pour intercepter son utilisation comme constructeur
 			 * - mockImplementation simule le comportement de "new this.userModel()"
