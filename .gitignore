@@ -1,6 +1,9 @@
 # Kiro IDE
 .kiro
 
+# VSCode
+.vscode/
+
 # Dependencies
 node_modules/
 

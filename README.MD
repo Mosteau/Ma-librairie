@@ -161,6 +161,7 @@ collection-manager/
 ### Movie
 - titre
 - réalisateur
+- description
 - année
 - genre
 - format (Blu-ray/DVD)
