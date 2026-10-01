@@ -36,6 +36,16 @@
 			"linter": {
 				"enabled": false
 			}
+		},
+		{
+			"includes": ["backend/**"],
+			"linter": {
+				"rules": {
+					"style": {
+						"useImportType": "off"
+					}
+				}
+			}
 		}
 	],
 	"assist": {
